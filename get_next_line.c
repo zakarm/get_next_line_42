@@ -126,5 +126,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	nxtline = line(buffer);
 	buffer = get_buffer(buffer);
+	if (nxtline[0] == 0)
+		return (free(nxtline), NULL);
 	return (nxtline);
 }
